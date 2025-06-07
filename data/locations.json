@@ -1,0 +1,53 @@
+{
+    
+ "townSquare": {
+    "buttonText":["Go to store", "Go to tavern", "Go to forest"],
+    "buttonFunction": ["goStore", "goTavern", "goForest"],
+    "text" : "You are in the town square. You see a waterwell, a store, a tavern called The Mossy Mug and a path leading to the forest.",
+    "image": "assets/images/locations/townsquare.png"
+},
+
+"store" : {
+    "buttonText":["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square", "Go to town square"],
+    "buttonFunction": ["buyHealth", "buyWeapon", "goTown", "goTown"],
+    "text": "You enter the store. The shopkeeper, an old lady, greets you warmly. There are some health potions on the counter and weapons hanging on the wall.",
+    "image": "assets/images/locations/store.png"
+ }
+,
+"tavern" : {
+    "buttonText":["Buy a drink (5 gold)", "Buy stew (10 gold)", "Start a fight", "Go to town square"],
+    "buttonFunction": ["buyDrink", "buyStew", "startFight", "goTown"],
+    "text": "You enter the tavern. The smell of ale and something that vaguely resembles stew fills the air. You see a few townsfolk enjoying their drinks and a stern looking man behind the bar.",
+    "image": "assets/images/locations/tavern.png"
+},
+"forest" : {
+    "buttonText":["Explore cave", "Go to clearing", "Climb mountain", "Go to town square"],
+    "buttonFunction": ["goCave", "goClearing", "goMountain", "goTown"],
+    "text": "You are in a dense forest. The trees are tall and the air is filled with the sounds of wildlife. You notice the entrance to a cave, a path to a clearing in the trees, and a mountain in the distance.",
+    "image": "assets/images/locations/forest.png"
+},
+"cave" : {
+    "buttonText":["Fight gloop", "Fight bat", "Go back to forest"],
+    "buttonFunction": ["fightGloop", "fightBat", "goForest"],
+    "text": "You enter the cave. You see some creatures: a rather gelatinous looking...gloop? - and a giant bat. They look rather friendly.",
+    "image": "assets/images/locations/cave.png"	
+},
+"clearingEmpty" : {
+    "buttonText":["Go back to forest"],
+    "buttonFunction": ["goForest"],
+    "text": "The middle of the grassy clearing is filled with sunshine and flowers. Birds are chirping and butterflies are flying to and fro.  There is nothing here, except for a nice little place to sit and rest.",
+    "image": "assets/images/locations/clearing.png"
+},
+"clearingGame" : {
+    "buttonText":["Play game","Go back to forest"],
+    "buttonFunction": ["gamble", "goForest"],
+    "text": "The middle of the grassy clearing is filled with sunshine and flowers. Birds are chirping and butterflies are flying to and fro. You see a rather shady looking fellow, sitting next to his old ramshackle cart. He beckons you closer and invites you to play a game with him.",
+    "image": "assets/images/locations/gamble.png"
+},
+"mountain" : {
+    "buttonText":["Go back to forest", "Steal stew", "Fight dragon"],
+    "buttonFunction": ["goForest", "stealStew", "fightDragon"],
+    "text": "You climb the mountain and reach the top. Clouds are rolling by. You see a dragon and a bowl of ... stew? The dragon looks rather intelligent, amplified by it's dark green scales and golden yellow belly. The dragon looks at you with a mix of curiosity and something you can't quite place.",
+    "image": "assets/images/locations/mountain.png"
+}
+}

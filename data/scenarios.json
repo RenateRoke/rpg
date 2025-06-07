@@ -1,0 +1,38 @@
+ {  
+    "fight" :{
+    "buttonText": ["Attack", "Dodge", "Run"],
+    "buttonFunction": ["attack", "dodge", "goForest"],
+    "text": "You want to fight, for some reason.",
+    "image": "assets/images/scenarios/fight.png"
+  },
+   "murderCreature" : {
+    "buttonText": ["Go to town square"],
+    "buttonFunction": ["goTown"],
+    "text": "The creature looks at their best friend and in their last breath you hear it say \"Goodbye, dearest\". It dies. You gain experience points and find gold. Hope it was worth it.",
+    "image": "assets/images/scenarios/grave.png"
+  },
+   "lose" :{
+    "buttonText": ["Replay"],
+    "buttonFunction": ["restart"],
+    "text": "You are mortally wounded. In your last moments you think about all the mistakes you made in your life. You realise the real monster was inside you all along. You die. But you can try again if you want. Do you deserve another chance?",
+    "image": "assets/images/scenarios/rip.png"
+    
+  },
+   "endGame" : { 
+    "buttonText": ["Replay?"], 
+    "buttonFunction": ["restart"], 
+    "text": "The dragon falls to the ground with a loud thud and a tear rolling from her eyes creates a small puddle at your feet. You expected to feel proud of yourself, but you don't. You feel empty inside. The townfolk are heartbroken. You can try again if you want. Do you deserve another chance?",
+    "image": "assets/images/scenarios/dragonDeath.png"
+  },
+   "gamble" :{
+    "buttonText": ["1", "2", "3", "Go to forest"],
+    "buttonFunction": ["pickOne", "pickTwo", "pickThree", "goForest"],
+    "text": "The man has leather pouch full of pebbles, with the numbers 1, 2 and 3 on them. He will grab one pebble out of the pouch. If the number you choose matches the number on the pebble, you win gold. If not, you might not feel so well for a while. Do you want to play?",
+    "image": "assets/images/scenarios/game.png"
+  },
+  "stewDeath" :{
+    "buttonText": ["Replay?"],
+    "button functions": ["restart"],
+    "text": "You eat the stew and immediately regret it. You feel a sharp pain in your stomach, your spoon clatters on the table and you collapse on the floor. The tavern owner looks at you with a mix of pity and disgust. In your last moments you think about all the mistakes you made in your life - and all the fluids violently leaving your body from both ends. You die. But you can try again if you want. Do you deserve another chance?",
+    "image": "assets/images/locations/stew.png"
+  }}

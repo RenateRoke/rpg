@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./styles.css">
+    <title>A Monster Story - RPG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1 class="sr-only">A Monster Story</h1>
+    <button id ="noNoise">Disable sound effects</button>
+    <div id="startScreen">
+       <p id="title">In a world full of heroes, the monster is often closer than you think.</p>
+       <div id="image"><img src="assets/images/monsterstoryfull.png" alt="Title image of A Monster Story. Background: a dark, gloomy forest, a crescent moon and ominous shadows. The text is adorned with a sword and shield." id="logo">
+       <div id="startText">
+       <p>Welcome, adventurer. You have arrived in Mossglade, where your story begins. You should start your journey by exploring the town.</p></div></div>
+       <button id="buttonStart">Go to town</button>
+    </div>
+    <div id="game" tabindex="-1">
+      <div id="description"><p id="text"></p></div>
+      <div id="image"><img src="" alt="" id="locationImage"></div>
+      <div id="stats">
+       <h2 class="sr-only">Your stats</h2>
+       <p class="stat"><img src="assets/images/icons/xp.png" alt="XP" id="xp"> <strong><span id="xpText">0</span></strong></p>
+       <p class="stat"><img src="assets/images/icons/health.png" alt="Health" id="healthVial"><strong><span id="healthText">100</span></strong></p>
+       <p class="stat"><img src="assets/images/icons/coin.png" alt="Gold" id="coin"> <strong><span id="goldText">50</span></strong></p>
+      </div>
+      <div id="creatureStats">
+       <h2 class="sr-only">Creature stats</h2>
+       <p class="stat">Creature: <strong><span id="creatureName"></span></strong></p>
+       <p class="stat">Health: <strong><span id="creatureHealth"></span></strong></p>
+      </div>
+      <div id="controls">
+       <h2 class="sr-only">Game controls</h2>
+       <button id="button1">Go to store</button>
+       <button id="button2">Go to tavern</button>
+       <button id="button3">Go to cave</button>
+       <button id="button4">Fight dragon</button>
+      </div>
+    </div>
+    <div id="music">
+       <h2 class="sr-only" id="music">Background music</h2>
+       <audio id="backgroundMusic" controls autoplay loop aria-labelledby="music" title="Fancy copyright free medieval music!">
+         <source src="assets/sound/backgroundmusic.mp3" type="audio/mpeg">
+         Your browser does not support the audio element.
+      </audio>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

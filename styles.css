@@ -1,0 +1,184 @@
+* {
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+body {
+  background-color: #3C5233;
+}
+
+.sr-only {
+ position: absolute;
+ width: 1px;
+ height: 1px;
+ overflow: hidden;
+ clip: rect(0, 0, 0, 0);
+ clip-path: inset(50%);
+ white-space: nowrap;
+}
+
+#startScreen {
+  max-width: 25vw;
+  max-height: 90vh;
+  background-color: #1E2A22;
+  color: #EAE7C6;
+  margin: 10em auto;
+  padding: 10px;
+}
+
+#game {
+  display: none;
+  max-width: 25vw;
+  max-height: 75vh;
+  background-color: #1E2A22;
+  color: #EAE7C6;
+  margin: 10em auto;
+  padding: 10px;
+}
+
+#game:focus {
+  outline: none;
+}
+
+
+#title {
+  text-align: center;
+  font-size: 2em;
+  font-style: italic;
+  color: #EAE7C6;
+}
+
+
+#logo {
+  box-sizing: border-box;
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: 0.5em auto;
+}
+
+#startText {
+  box-sizing: border-box;
+  width: 80%;
+  height: auto;
+  margin: 0.5em auto;
+  background-color: #1E2A22;
+  color: #EAE7C6;
+  padding: 0.5em;
+}
+
+#text {
+  background-color: #1E2A22;
+  color: #EAE7C6;
+  padding: 1em;
+}
+
+#buttonStart {
+ margin: 1em auto;
+ display: block;
+}
+
+#locationImage {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+}
+
+#coin {
+  width: auto;
+  height: 1.5em;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle
+}
+
+#healthVial {
+  width: auto;
+  height: 1.5em;
+  display: inline;
+  margin: 0;
+  padding-right: 0.25em;
+  vertical-align: middle
+}
+
+#xp {
+  width: auto;
+  height: 1.5em;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle
+}
+
+#controls,
+#stats {
+  padding: 0.5em;
+  background-color: #EAE7C6;
+  color: #1E2A22;
+  display: flex;
+  justify-content: space-around;
+}
+
+#creatureStats {
+  display: none;
+  border: 1px solid #0F1C14;
+  padding: 5px;
+  color: #EAE7C6;
+  background-color: #642e2e;
+}
+
+.stat {
+  padding-right: 10px;
+}
+
+button, #buttonStart {
+  cursor: pointer;
+  color: #1E2A22;
+  background-color: #EAE7C6;
+  border: 2px solid #0F1C14;
+  padding: 2px;
+}
+
+button:focus, #buttonStart:focus {
+  background-color: #1E2A22;
+  color: #EAE7C6;
+  border: 2px solid #EAE7C6;
+  outline: 2px solid #1E2A22;
+}
+
+audio {
+  display: block;
+  margin: 2em auto;
+}
+
+audio:focus {
+  outline: 2px solid #EAE7C6;
+  outline-offset: 4px;
+}
+
+@media (max-width: 800px) {
+#startScreen {
+  max-width: 80vw;
+  max-height: 100vh;
+}
+
+#game {
+  display: none;
+  max-width: 80vw;
+  max-height: 100vh;
+}
+}
+
+@media (max-height: 500px) {
+#startScreen {
+  max-width: 80vw;
+  max-height: 100vh;
+}
+
+#game {
+  display: none;
+  max-width: 80vw;
+  max-height: 100%;
+}
+}
