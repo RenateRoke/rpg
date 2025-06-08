@@ -4,6 +4,8 @@ A Monster Story: A pixel-art click-through RPG where things are not as they seem
 This project started as a basic exercise to learn the basics of JavaScript from an online course, but has since evolved into a fully custom game with visuals, sound effects, structure, and tone. All code has been heavily rewritten, restructered and expanded. 
 
 ## How to play
+Play on https://renateroke.github.io/rpg/, or
+
 1. Clone or download this repository. 
 2. Open the index file with a local live server.
 
