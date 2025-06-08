@@ -232,8 +232,10 @@ function buyHealth() {
     healthText.innerText = health;
     if (useSoundeffects) {
     coinSound.play();}
+    document.getElementById("game")?.focus({ preventScroll: true });
   } else {
     text.innerText = "You do not have enough gold to buy health. Maybe focus on some inner healing instead?";
+    document.getElementById("game")?.focus({ preventScroll: true });
   }
 }
 
@@ -249,13 +251,16 @@ function buyWeapon() {
       text.innerText += " In your inventory you have: " + inventory;
       if (useSoundeffects) {
       coinSound.play();}
+      document.getElementById("game")?.focus({ preventScroll: true });
     } else {
       text.innerText = "You do not have enough gold to buy a weapon. Maybe that's for the best.";
+      document.getElementById("game")?.focus({ preventScroll: true });
     }
   } else {
     text.innerText = "You already have the most powerful weapon! Is enough not enough for you?";
     button2.innerText = "Sell weapon for 15 gold";
     button2.onclick = sellWeapon;
+    document.getElementById("game")?.focus({ preventScroll: true });
   }
 }
 
@@ -268,9 +273,10 @@ function sellWeapon() {
     let currentWeapon = inventory.shift();
     text.innerText = "You sold a " + currentWeapon + ".";
     text.innerText += " In your inventory you have: " + inventory;
-
+    document.getElementById("game")?.focus({ preventScroll: true });
   } else {
     text.innerText = "Don't sell your only weapon!";
+    document.getElementById("game")?.focus({ preventScroll: true });
   }
 }
 
@@ -283,8 +289,10 @@ function buyDrink() {
     goldText.innerText = gold;
     healthText.innerText = health;
     text.innerText = "You bought a drink. You feel a bit better.";
+    document.getElementById("game")?.focus({ preventScroll: true });
   } else {
     text.innerText = "You do not have enough gold to buy a drink. Maybe you should drink some water instead?";
+    document.getElementById("game")?.focus({ preventScroll: true });
   }
 }
 
@@ -297,8 +305,10 @@ function buyStew() {
     goldText.innerText = gold;    
     healthText.innerText = health;
     text.innerText = "You bought a stew. You bite into what you assumed was meat, only for it to collapse into a warm, gooey substance that tastes like someone tried to ferment broth in a sock. You don't feel so good.";
+    document.getElementById("game")?.focus({ preventScroll: true });
   } else if (health > 6 && gold < 10) {
     text.innerText = "You do not have enough gold to buy a stew. Maybe that's for the best. The tavern is known for its questionable hygiene.";
+    document.getElementById("game")?.focus({ preventScroll: true });
   } else if (health <= 5 && gold >= 10) {
    stewDeath();
   }
@@ -306,6 +316,10 @@ function buyStew() {
 
 function stewDeath () {
   start(scenarioData.stewDeath);
+  if (useSoundeffects) {
+  deathSound.volume = 0.5;
+  deathSound.play();}
+  button1.style.display = "inline"
   button2.style.display = "none";
   button3.style.display = "none";
   button4.style.display = "none";
@@ -319,6 +333,7 @@ function startFight() {
     health += 5;
     healthText.innerText = health;
     text.innerText = "You walk towards the nearest person in the tavern, raising your fist. They smile and wave back. They are celebrating their birthday and brought their friends. They buy you a drink. You eat some cake. Life is good. You gain 5 health.";
+    document.getElementById("game")?.focus({ preventScroll: true });
   } else if (Math.random() < 0.5 && health > 5) {
     if (useSoundeffects) {
     punchSound.volume = 0.5;
@@ -326,8 +341,10 @@ function startFight() {
     health = 1;
     healthText.innerText = health;
     text.innerText = "You walk towards the nearest person in the tavern and punch them in the face. They were celebrating their birthday and brought their friends. They beat you up and leave you lying on the floor. They get some drinks and eat some cake. You lose all but 1 health.";
+    document.getElementById("game")?.focus({ preventScroll: true });
   } else if (Math.random() < 0.5 && health === 1) {
     text.innerText = "You walk towards the nearest person in the tavern, raising your fists. They look at you with pity and shake their head. You are too weak to fight. You feel embarrassed. Maybe you should leave.";
+    document.getElementById("game")?.focus({ preventScroll: true });
   }   
 }
 
@@ -343,7 +360,6 @@ function fightBat() {
 
 function stealStew() {
   if (Math.random() < 0.5 && health > 10) {
-    document.getElementById("game")?.focus({ preventScroll: true });
     health -= 10;
     healthText.innerText = health;
     text.innerText = "You successfully steal the stew and grab a bite. You don't feel so good. The dragon looks at you with a look of understanding, as if it knows what you're going through. You lose 10 health.";
@@ -351,6 +367,7 @@ function stealStew() {
     button2.style.display = "none";
     button3.style.display = "none";
     button4.style.display = "none";
+    document.getElementById("game")?.focus({ preventScroll: true });
   } else if (Math.random() < 0.5 && health <= 10) {
     lose();
   } else {
@@ -375,7 +392,7 @@ function goFight() {
   button1.style.display = "inline";
   button1.style.display = "inline";
   button1.style.display = "inline";
-  button1.style.display = "none";
+  button1.style.display = "inline";
 }
 
 function attack() {
@@ -384,8 +401,10 @@ function attack() {
   health -= getCreatureAttackValue(creatures[fighting].level);
   if (isCreatureHit()) {
     creatureHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
+    document.getElementById("game")?.focus({ preventScroll: true });
   } else {
     text.innerText += " You miss.";
+    document.getElementById("game")?.focus({ preventScroll: true });
   }
   healthText.innerText = health;
   creatureHealthText.innerText = creatureHealth;
@@ -401,6 +420,7 @@ function attack() {
   if (Math.random() <= .1 && inventory.length !== 1) {
     text.innerText += "Oh no... your " + inventory.pop() + " breaks.";
     currentWeapon--;
+    document.getElementById("game")?.focus({ preventScroll: true });
   }
 }
 
@@ -416,6 +436,7 @@ function isCreatureHit() {
 
 function dodge() {
   text.innerText = "You dodge the attack from the " + creatures[fighting].name;
+  document.getElementById("game")?.focus({ preventScroll: true });
 }
 
 function murderCreature() {

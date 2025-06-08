@@ -32,7 +32,7 @@
   },
   "stewDeath" :{
     "buttonText": ["Replay?"],
-    "button functions": ["restart"],
+    "buttonFunction": ["restart"],
     "text": "You eat the stew and immediately regret it. You feel a sharp pain in your stomach, your spoon clatters on the table and you collapse on the floor. The tavern owner looks at you with a mix of pity and disgust. In your last moments you think about all the mistakes you made in your life - and all the fluids violently leaving your body from both ends. You die. But you can try again if you want. Do you deserve another chance?",
-    "image": "assets/images/locations/stew.png"
+    "image": "assets/images/scenarios/stew.png"
   }}
