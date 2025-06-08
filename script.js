@@ -500,8 +500,8 @@ function pickOne() {
   pick(1);
   button1.style.display = "none";
   button2.style.display = "none";
-  button3.style.display = "inline";
-  button4.style.display = "none";
+  button3.style.display = "none";
+  button4.style.display = "inline";
 }
 
 function pickTwo() {
@@ -534,6 +534,10 @@ function pick(guess) {
     text.innerText = "You lose. The man laughs at you and bonks you on the head with his - very full - coinpouch. You feel a bit dizzy and your vision blurs. You lose 10 health.";
     health -= 10;
     healthText.innerText = health;
+    button1.style.display = "none";
+    button2.style.display = "none";
+    button3.style.display = "none";
+    button4.style.display = "inline";
     if (health <= 0) {
       lose();
     }}}
