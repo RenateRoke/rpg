@@ -1,10 +1,11 @@
 let xp = 0;
 let health = 100;
-let gold = 50;
+let gold = 500;
 let currentWeapon = 0;
 let fighting;
 let creatureHealth;
 let inventory = [" stick"];
+let inventoryImage = ["assets/images/icons/stick.png"]
 let locationData;
 let scenarioData;
 let useSoundeffects = true;
@@ -26,6 +27,14 @@ const birdSound = new Audio("assets/sound/birds.mp3");
 const fightSound = new Audio("assets/sound/fight.mp3");
 const deathSound = new Audio("assets/sound/death.mp3");
 const backgroundMusic = document.querySelector("#backgroundMusic");
+const item1 = document.querySelector("#item1");
+const item2 = document.querySelector("#item2");
+const item3 = document.querySelector("#item3");
+const item4 = document.querySelector("#item4");
+const inventoryImage1 = document.querySelector("#inventoryImage1");
+const inventoryImage2 = document.querySelector("#inventoryImage2");
+const inventoryImage3 = document.querySelector("#inventoryImage3");
+const inventoryImage4 = document.querySelector("#inventoryImage4");
 const button1 = document.querySelector('#button1');
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
@@ -41,10 +50,10 @@ const creatureHealthText = document.querySelector("#creatureHealth");
 
 
 const weapons = [
-  { name: ' stick', power: 5 },
-  { name: ' dagger', power: 30 },
-  { name: ' spear', power: 50 },
-  { name: ' sword', power: 100 }
+  { name: ' stick', power: 5, image: "assets/images/icons/stick.png" },
+  { name: ' dagger', power: 30, image: "assets/images/icons/dagger.png" },
+  { name: ' spear', power: 50, image: "assets/images/icons/spear.png" },
+  { name: ' sword', power: 100, image: "assets/images/icons/sword.png" }
 ]; 
 
 const creatures = [
@@ -81,6 +90,41 @@ buttonNoNoise.onclick = function() {
   buttonNoNoise.innerText = useSoundeffects ? "Disable sound effects" : "Turn on sound effects";
 }
 
+function updateInventory() {
+  console.log(inventoryImage.length)
+  console.log(inventory.length)
+if (inventoryImage.length === 1) {
+  console.log(inventoryImage)
+inventoryImage1.src = inventoryImage[0];
+item1.style.display = "inline";
+item2.style.display = "none";
+item3.style.display = "none";
+item4.style.display = "none"; 
+} else if (inventoryImage.length === 2) {
+inventoryImage1.src = inventoryImage[0];
+inventoryImage2.src = inventoryImage[1];
+item1.style.display = "inline";
+item2.style.display = "inline";
+item3.style.display = "none";
+item4.style.display = "none"; 
+} else if (inventoryImage.length === 3) {
+inventoryImage1.src = inventoryImage[0];
+inventoryImage2.src = inventoryImage[1];
+inventoryImage3.src = inventoryImage[2];
+item1.style.display = "inline";
+item2.style.display = "inline";
+item3.style.display = "inline";
+item4.style.display = "none"; 
+} else if (inventoryImage.length === 4) {
+inventoryImage1.src = inventoryImage[0];
+inventoryImage2.src = inventoryImage[1];
+inventoryImage3.src = inventoryImage[2];
+inventoryImage4.src = inventoryImage[3];
+item1.style.display = "inline";
+item2.style.display = "inline";
+item3.style.display = "inline";
+item4.style.display = "inline";
+}}
 
 
 function update(location) {
@@ -221,6 +265,7 @@ function goMountain() {
   startScreen.style.display = "none";
   game.style.display = "block";
   goTown();
+  updateInventory();
 }
 
 
@@ -246,11 +291,14 @@ function buyWeapon() {
       currentWeapon++;
       goldText.innerText = gold;
       let newWeapon = weapons[currentWeapon].name;
+      let newWeaponImage = weapons[currentWeapon].image;
       text.innerText = "You now have a " + newWeapon + ". You can now kill stronger creatures, if you really want to.";
       inventory.push(newWeapon);
+      inventoryImage.push(newWeaponImage);
       text.innerText += " In your inventory you have: " + inventory;
       if (useSoundeffects) {
       coinSound.play();}
+      updateInventory();
       document.getElementById("game")?.focus({ preventScroll: true });
     } else {
       text.innerText = "You do not have enough gold to buy a weapon. Maybe that's for the best.";
@@ -270,9 +318,11 @@ function sellWeapon() {
     coinSound.play();}
     gold += 15;
     goldText.innerText = gold;
-    let currentWeapon = inventory.shift();
-    text.innerText = "You sold a " + currentWeapon + ".";
+    let soldWeapon = inventory.shift();
+    inventoryImage.shift();
+    text.innerText = "You sold a " + soldWeapon + ".";
     text.innerText += " In your inventory you have: " + inventory;
+    updateInventory();
     document.getElementById("game")?.focus({ preventScroll: true });
   } else {
     text.innerText = "Don't sell your only weapon!";
@@ -421,6 +471,8 @@ function attack() {
     text.innerText += "Oh no... your " + inventory.pop() + " breaks.";
     currentWeapon--;
     document.getElementById("game")?.focus({ preventScroll: true });
+    inventoryImage.pop();
+    updateInventory();
   }
 }
 

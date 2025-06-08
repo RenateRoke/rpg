@@ -26,6 +26,18 @@
     <div id="game" tabindex="-1">
       <div id="description"><p id="text"></p></div>
       <div id="image"><img src="" alt="" id="locationImage"></div>
+      <div id="inventory">
+        <h2 class="sr-only">Your inventory</h2>
+        <div class="bag-container">
+          <p class="bag"><span class="sr-only">Your bag holds:</span><img src="assets/images/icons/inventory.png" alt="" id="bag"></p>
+        </div>
+       <div class="item-container">
+       <div class="items">
+        <div id="item1"><p><span class="sr-only">Stick</span><img src="" alt="" id="inventoryImage1" class="inventimage"></p></div>
+        <div id="item2"><p><span class="sr-only">Dagger</span><img src="" alt="" id="inventoryImage2" class="inventimage"></p></div>
+        <div id="item3"><p><span class="sr-only">Spear</span><img src="" alt="" id="inventoryImage3" class="inventimage"></p></div>
+        <div id="item4"><p><span class="sr-only">Sword</span><img src="" alt="" id="inventoryImage4" class="inventimage"></p></div>
+      </div></div></div>
       <div id="stats">
        <h2 class="sr-only">Your stats</h2>
        <p class="stat"><span class="sr-only">XP: </span><img src="assets/images/icons/xp.png" alt="" id="xp"><strong><span id="xpText">0</span></strong></p>
@@ -43,7 +55,7 @@
        <button id="button2">Go to tavern</button>
        <button id="button3">Go to cave</button>
        <button id="button4">Fight dragon</button>
-      </div>
+      </div></div>
     </div>
     <script src="./script.js"></script>
   </body>

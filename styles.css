@@ -89,6 +89,27 @@ header {
   margin: 2em auto;
 }
 
+#bag {
+  display: block;
+  width: auto;
+  height: 2em;
+  padding: 0;
+  margin: auto;
+}
+
+.bag {
+  padding: 0;
+}
+
+.inventimage {
+  width: auto;
+  height: 2em;
+  display: inline;
+  margin: 0 auto;
+  padding: 0;
+  vertical-align: middle;
+}
+
 #coin {
   width: auto;
   height: 1.5em;
@@ -116,6 +137,7 @@ header {
   vertical-align: middle
 }
 
+
 #controls,
 #stats {
   padding: 0.5em;
@@ -123,6 +145,47 @@ header {
   color: #1E2A22;
   display: flex;
   justify-content: space-around;
+}
+
+#inventory {
+  padding: 0.5em;
+  background-color: #BF9972;
+  display: flex;
+  align-items: center;
+  border-bottom: #0F1C14 solid 1px;
+}
+
+.bag-container {
+  display: inline-block;
+  width: 15%;
+  background-color: #3C5233;
+  padding: 0;
+}
+
+.bag {
+  display: block;
+}
+
+.item-container {
+  width: 85%;
+  display: inline-block;
+  width: 75%;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  padding-left: 2em;
+}
+
+
+#item1, 
+#item2, 
+#item3, 
+#item4 {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 #creatureStats {
@@ -157,23 +220,23 @@ audio:focus {
   outline-offset: 4px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
 #startScreen {
   max-width: 80vw;
-  max-height: 100vh;
+  max-height: 100%;
 }
 
 #game {
   display: none;
   max-width: 80vw;
-  max-height: 100vh;
+  max-height: 100%;
 }
 }
 
-@media (max-height: 500px) {
+@media (max-height: 800px) {
 #startScreen {
   max-width: 80vw;
-  max-height: 100vh;
+  max-height: 100%;
 }
 
 #game {
