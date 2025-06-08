@@ -6,8 +6,8 @@
     "image": "assets/images/scenarios/fight.png"
   },
    "murderCreature" : {
-    "buttonText": ["Go to town square"],
-    "buttonFunction": ["goTown"],
+    "buttonText": ["Go to forest"],
+    "buttonFunction": ["goForest"],
     "text": "The creature looks at their best friend and in their last breath you hear it say \"Goodbye, dearest\". It dies. You gain experience points and find gold. Hope it was worth it.",
     "image": "assets/images/scenarios/grave.png"
   },
