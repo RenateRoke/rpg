@@ -16,6 +16,11 @@ body {
  white-space: nowrap;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
 #startScreen {
   max-width: 25vw;
   max-height: 90vh;
@@ -145,11 +150,6 @@ button:focus, #buttonStart:focus {
   color: #EAE7C6;
   border: 2px solid #EAE7C6;
   outline: 2px solid #1E2A22;
-}
-
-audio {
-  display: block;
-  margin: 2em auto;
 }
 
 audio:focus {
