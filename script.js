@@ -524,6 +524,8 @@ function pickThree() {
 function pick(guess) {
   if (guess === Math.floor(Math.random() * 3) + 1) {
     document.getElementById("game")?.focus({ preventScroll: true });
+    if (useSoundeffects) {
+    coinSound.play();}
     text.innerText = "You won! The man glares at you and mumbles something about how outsiders always cheat. He hands you 20 gold.";
     gold += 20;
     goldText.innerText = gold;
