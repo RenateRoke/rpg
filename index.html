@@ -7,8 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
+    <header id="soundControls">
+      <button id ="noNoise">Disable sound effects</button>
+      <h2 class="sr-only" id="music">Background music</h2>
+      <audio id="backgroundMusic" controls loop aria-labelledby="music" title="Fancy copyright free medieval music!">
+      <source src="assets/sound/backgroundmusic.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+    </header>
     <h1 class="sr-only">A Monster Story</h1>
-    <button id ="noNoise">Disable sound effects</button>
     <div id="startScreen">
        <p id="title">In a world full of heroes, the monster is often closer than you think.</p>
        <div id="image"><img src="assets/images/monsterstoryfull.png" alt="Title image of A Monster Story. Background: a dark, gloomy forest, a crescent moon and ominous shadows. The text is adorned with a sword and shield." id="logo">
@@ -37,13 +44,6 @@
        <button id="button3">Go to cave</button>
        <button id="button4">Fight dragon</button>
       </div>
-    </div>
-    <div id="music">
-       <h2 class="sr-only" id="music">Background music</h2>
-       <audio id="backgroundMusic" controls loop aria-labelledby="music" title="Fancy copyright free medieval music!">
-         <source src="assets/sound/backgroundmusic.mp3" type="audio/mpeg">
-         Your browser does not support the audio element.
-      </audio>
     </div>
     <script src="./script.js"></script>
   </body>
