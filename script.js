@@ -457,6 +457,7 @@ function attack() {
     document.getElementById("game")?.focus({ preventScroll: true });
   }
   healthText.innerText = health;
+  breakWeapon();
   creatureHealthText.innerText = creatureHealth;
   if (health <= 0) {
     lose();
@@ -467,13 +468,17 @@ function attack() {
       murderCreature();
     }
   }
-  if (Math.random() <= .1 && inventory.length !== 1) {
+}
+
+function breakWeapon() {
+    if (Math.random() <= .1 && inventory.length !== 1) {
     text.innerText += "Oh no... your " + inventory.pop() + " breaks.";
     currentWeapon--;
     document.getElementById("game")?.focus({ preventScroll: true });
     inventoryImage.pop();
     updateInventory();
   }
+
 }
 
 function getCreatureAttackValue(level) {
@@ -534,10 +539,12 @@ function restart() {
   gold = 50;
   currentWeapon = 0;
   inventory = ["stick"];
+  inventoryImage = ["assets/images/icons/stick.png"]
   goldText.innerText = gold;
   healthText.innerText = health;
   xpText.innerText = xp;
   goTown();
+  updateInventory();
 }
 
 function gamble() {
