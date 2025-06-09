@@ -1,7 +1,7 @@
 # README
 A Monster Story: A pixel-art click-through RPG where things are not as they seem.
 
-This project started as a basic exercise to learn the basics of JavaScript from an online course, but has since evolved into a fully custom game with visuals, sound effects, structure, and tone. All code has been heavily rewritten, restructered and expanded. 
+This project started as an exercise to learn the basics of JavaScript from an online course, but has since evolved into a fully custom game with visuals, sound effects, tone and new features. All base code has been heavily rewritten, restructered and expanded. 
 
 ## How to play
 Play on https://renateroke.github.io/rpg/, or
@@ -13,13 +13,36 @@ Play on https://renateroke.github.io/rpg/, or
 - Logo
 - All location and scenario images
 - Gold icon
+- XP icon
 
 Created with GPT-4.0 [OpenAI Terms of Use – Ownership of Content](https://openai.com/policies/terms-of-use#ownership).
 
 ## Self made images
 
 - Health icon
-- XP icon
+- Inventory icon
+- All weapon icons
+
+## Added features from base code and base features
+
+- Start screen including start game functionality
+- Storyline text
+- All images
+- Tavern, including:
+   - Buy drink functionality
+   - Buy stew functionality
+   - Stew death functionality
+   - Start fight functionality
+- Forest
+- Clearing, including:
+   - Empty clearing
+   - Encounter and gamble game (gamble game modified from original feature)
+- Background music and audio functionality
+- Sound effects and disable/enable sound effect functionality
+- Data storage in json & fetch functionality
+- Inventory feature and inventory update functionality
+- Most CSS styling and features including media query's (which are not complete yet, working on it!) and keyboard focus style
+- Keyboard focus management
 
 ## Sound effect credits
 
