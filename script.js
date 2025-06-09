@@ -452,12 +452,12 @@ function attack() {
   if (isCreatureHit()) {
     creatureHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
     document.getElementById("game")?.focus({ preventScroll: true });
+    breakWeapon();
   } else {
     text.innerText += " You miss.";
     document.getElementById("game")?.focus({ preventScroll: true });
   }
   healthText.innerText = health;
-  breakWeapon();
   creatureHealthText.innerText = creatureHealth;
   if (health <= 0) {
     lose();
