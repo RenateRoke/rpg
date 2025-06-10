@@ -2,6 +2,7 @@ let xp = 0;
 let health = 100;
 let gold = 50;
 let currentWeapon = 0;
+let drinkCount = 0;
 let fighting;
 let creatureHealth;
 let inventory = [" stick"];
@@ -26,6 +27,7 @@ const whistleSound = new Audio("assets/sound/whistle.mp3");
 const birdSound = new Audio("assets/sound/birds.mp3");
 const fightSound = new Audio("assets/sound/fight.mp3");
 const deathSound = new Audio("assets/sound/death.mp3");
+const barfSound = new Audio("assets/sound/barf.mp3");
 const backgroundMusic = document.querySelector("#backgroundMusic");
 const item1 = document.querySelector("#item1");
 const item2 = document.querySelector("#item2");
@@ -233,7 +235,8 @@ function goClearing() {
   button2.style.display = "inline";
   button3.style.display = "none";
   button4.style.display = "none";
-}}
+} drinkCount = 0;
+}
 
 function goMountain() {
   update(locationData.mountain);
@@ -340,9 +343,28 @@ function buyDrink() {
     healthText.innerText = health;
     text.innerText = "You bought a drink. You feel a bit better.";
     document.getElementById("game")?.focus({ preventScroll: true });
+    drinkCount += 1;
   } else {
     text.innerText = "You do not have enough gold to buy a drink. Maybe you should drink some water instead?";
     document.getElementById("game")?.focus({ preventScroll: true });
+  }
+  if (drinkCount === 5) {
+    if (useSoundeffects) {
+    barfSound.play();}
+    health -= 25;
+    healthText.innerText = health;
+    text.innerText = "You had too much to drink. You don't feel so good. Maybe it's time to get some fresh air and sit and rest for a while?";
+    if (health <= 0) {
+    lose();}
+  }
+  if (drinkCount >= 6) {
+    if (useSoundeffects) {
+    barfSound.play();}
+    health -= 25;
+    healthText.innerText = health;
+    text.innerText = "Really?";
+    if (health <= 0) {
+    lose();}
   }
 }
 
@@ -538,6 +560,7 @@ function restart() {
   health = 100;
   gold = 50;
   currentWeapon = 0;
+  drinkCount = 0;
   inventory = ["stick"];
   inventoryImage = ["assets/images/icons/stick.png"]
   goldText.innerText = gold;
