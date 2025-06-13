@@ -200,15 +200,14 @@ header {
   padding-right: 10px;
 }
 
-button, #buttonStart {
-  cursor: pointer;
+button {
   color: #1E2A22;
   background-color: #EAE7C6;
   border: 2px solid #0F1C14;
   padding: 2px;
 }
 
-button:focus, #buttonStart:focus {
+button:focus {
   background-color: #1E2A22;
   color: #EAE7C6;
   border: 2px solid #EAE7C6;
